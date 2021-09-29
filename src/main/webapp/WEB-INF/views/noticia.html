@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="padrao :: head">
+        <title>Noticia</title>
+
+    </head>
+    <body>
+
+        <div  th:replace="padrao :: menu"/>
+        <div class="card" style="margin-left: 42%; margin-top: 150px; width: 340px ;align-items: center; border-color: black; border-radius: 5px; border-width: 2px; padding: 10px ">
+            <form action="#" th:action="@{/noticia}" method="POST" th:object="${noticia}">
+            
+                <h2 style="color: black">Cadastro de Noticias</h2>
+                <div>
+                    <input class="form-control" placeholder="Informe a URL da Noticia" style="margin-bottom: 5px; margin-top: 5%" type="text" th:field="*{url}" /> 
+                </div>
+                <div>
+                    <input style="margin-top: 5%" class="btn btn-dark" type="submit" value="Cadastrar"/>   
+                </div>
+      
+            </form>
+        </div>
+    </body>
+</html>

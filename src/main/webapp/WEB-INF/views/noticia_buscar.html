@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="padrao :: head">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:replace="padrao :: menu"/>
+        <div class="card" style="margin-left: 42%; margin-top: 150px; width: 340px ;align-items: center; border-color: black; border-radius: 5px; border-width: 2px; padding: 10px ">
+            <form class="nav-link" style="display: flex; margin-top: 2%; width: 100%"
+                  action="#" th:action="@{/noticia/pesquisar}" method="POST" th:object="${filtro}">
+                <div style=" width: 100%">
+                    <h2 style="color: black">Pesquisar Noticia</h2>
+                    <select th:field="*{tipo}" class="form-select" name="tipofiltro" style=" margin-top:  5%">
+                        <option th:value="'autor'" th:text="Autor" selected="selected" ></option>
+                        <option th:value="'titulo'" th:text="Titulo"></option>
+                        <option th:value="'subtitulo'" th:text="Subtitulo"></option>
+                    </select>               
+                    <input th:field="*{conteudo}" style=" margin-top: 5%" class="form-control" type="text" placeholder="Informe..."></input>
+                    <input style=" margin-top: 5%" class="btn btn-dark" type="submit" value="Buscar"></input>                       
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

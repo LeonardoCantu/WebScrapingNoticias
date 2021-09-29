@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="padrao :: head">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:replace="padrao :: menu"/>
+        <div style="width: 80%; margin-left: 10%; align-items: center">
+            <table class="table">
+                <thead class="table-light">
+                    <tr>
+                        <th >Titulo</th>
+                        <th >Subtitulo</th>
+                        <th >Autor</th>
+                        <th >Data</th>
+                        <th >URL da Noticia Original</th>
+                        <th ></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="noticia : ${noticias}">
+                        <td th:text="${noticia.titulo}"></td>
+                        <td th:text="${noticia.subtituloCabecalho}"></td>
+                        <td th:text="${noticia.autor}"></td>
+                        <td th:text="${noticia.dataPublicacao}"></td>
+                        <td th:text="${noticia.url}"></td>
+                        <td>
+                            <a  class="btn btn-dark" th:href="@{'/noticia/visualizar/'+${noticia.id}}">Visualizar</a>                                             
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

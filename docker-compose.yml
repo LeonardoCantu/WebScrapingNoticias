@@ -1,0 +1,25 @@
+version: "3.7"
+services: 
+  db:
+    image: postgres
+    container_name: postgres-container
+    environment:
+      POSTGRES_PASSWORD: 
+    volumes: 
+      - ./noticias/db/data:/var/lib/postgres
+    
+
+  noticia-app:
+    build: 
+      context: "./"
+      dockerfile: Dockerfile
+    restart: always
+    volumes: 
+      - ./noticias:/home/app
+    ports: 
+      - "8080:8080"
+    depends_on: 
+      - db
+
+      
+      

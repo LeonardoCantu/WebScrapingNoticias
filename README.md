@@ -1,7 +1,7 @@
 # WebScrapingNoticias
 WebScraping de noticias do InfoMoney
 
--Para executar a aplicão é necessario alterar os seguintes campos no arquivo PersistemConfig.java:
+-Para executar a aplicação é necessario alterar os seguintes campos no arquivo PersistemConfig.java:
 
  Caso o banco utilizado seja o Postgres alterar somente os dados do tópico 1;   
   
